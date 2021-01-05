@@ -27,6 +27,7 @@ class nhelper:
     def get_inp(self, text):
         search = input(text)
         search = search.capitalize()
+        search = search.replace(' ', '_')
         
         return search
 
