@@ -15,4 +15,4 @@ can swim
 can survive underwater
 has no hands
 is an animal
-can eat corpses.```
+can eat corpses.
