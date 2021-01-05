@@ -1,17 +1,28 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 
 class nhelper:
     def __init__(self):
-        search = self.get_inp('Search: ')
+        while(True):
+            try:
+                search = self.get_inp('Search: ')
+                os.system('cls||clear')
+                if search == 'Quit' or search == 'Q':
+                    exit()
+                else:
+                    URL = 'https://nethackwiki.com/wiki/%s' % (search)
+                    site = self.get_html(URL)
 
-        URL = 'https://nethackwiki.com/wiki/%s' % (search)
-        site = self.get_html(URL)
-
-        status = self.get_status(site)
-        short_status = self.get_short_status(status)
+                    status = self.get_status(site)
+                    short_status = self.get_short_status(status)
         
-        self.out_stat(short_status)
+                    self.out_stat(short_status)
+
+            except AttributeError:
+                print("Oops, silly, you materialize ERROR... Try Again!!")
+                continue
+
 
     def get_inp(self, text):
         search = input(text)
